@@ -1,17 +1,17 @@
 import { NextResponse } from 'next/server';
 
-// This function can be marked `async` if using `await` inside
 export function proxy(request) {
-  const isLoggedin = request.cookies.get('smartmart_auth')?.value == true;
+  const isLoggedin = request.cookies.get('smartmart_auth')?.value == 'true';
 
   if (!isLoggedin) {
-    return NextResponse.redirect(new URL('/login', request.url));
+    const loginUrl = new URL('/login', request.url);
+    loginUrl.searchParams.set('redirect', request.nextUrl.pathname);
+
+    return NextResponse.redirect(loginUrl);
   }
+
   return NextResponse.next();
 }
-
-// Alternatively, you can use a default export:
-// export default function proxy(request) { ... }
 
 export const config = {
   matcher: '/add-item/:path*',
