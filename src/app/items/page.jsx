@@ -10,7 +10,6 @@ import React from 'react';
 
 const products = [
   {
-    id: 1,
     name: 'Smartphone Pro X',
     price: 899,
     category: 'Electronics',
@@ -19,7 +18,6 @@ const products = [
     image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9',
   },
   {
-    id: 2,
     name: 'Wireless Headphones',
     price: 199,
     category: 'Electronics',
@@ -28,7 +26,6 @@ const products = [
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e',
   },
   {
-    id: 3,
     name: 'Smart Watch Series 5',
     price: 299,
     category: 'Wearables',
@@ -37,7 +34,6 @@ const products = [
     image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30',
   },
   {
-    id: 4,
     name: 'Gaming Laptop',
     price: 1499,
     category: 'Electronics',
@@ -46,7 +42,6 @@ const products = [
     image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8',
   },
   {
-    id: 5,
     name: 'Bluetooth Speaker',
     price: 129,
     category: 'Accessories',
@@ -55,7 +50,6 @@ const products = [
     image: 'https://images.unsplash.com/photo-1585386959984-a41552231693',
   },
   {
-    id: 6,
     name: 'Wireless Keyboard & Mouse',
     price: 79,
     category: 'Accessories',

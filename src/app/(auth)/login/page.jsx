@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 const demoAccounts = [
   {
-    label: 'Admin',
+    label: 'Demo Login',
     email: 'admin@gmail.com',
     password: 'admin123',
   },
@@ -67,7 +67,7 @@ const LoginPage = () => {
 
             <button
               type="submit"
-              className="bg-gray-900 text-white w-full py-2"
+              className="bg-gray-900 text-white w-full py-2 cursor-pointer"
             >
               Login
             </button>
@@ -79,7 +79,7 @@ const LoginPage = () => {
             defaultValue=""
           >
             <option value="" disabled>
-              Login Demo Account
+              Select Demo Account
             </option>
             {demoAccounts.map((acc) => (
               <option key={acc.label} value={acc.label}>
