@@ -5,10 +5,11 @@ import { ObjectId } from 'mongodb';
 // GET single product
 export async function GET(req, { params }) {
   try {
+    const { id } = await params;
     const collection = await dbConnect('products');
 
     const product = await collection.findOne({
-      _id: new ObjectId(params.id),
+      _id: new ObjectId(id),
     });
 
     if (!product) {
