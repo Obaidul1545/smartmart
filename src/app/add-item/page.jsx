@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const AddProductpage = () => {
   const router = useRouter();
@@ -20,18 +21,18 @@ const AddProductpage = () => {
       image,
     };
 
-    // const res = await fetch('http://localhost:5000/items', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(newProduct),
-    // });
+    const res = await fetch('http://localhost:3000/api/products', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newProduct),
+    });
 
-    // if (res.ok) {
-    //   alert('Product added successfully!');
-    //   router.push('/items');
-    // }
+    if (res.ok) {
+      toast.success('Product added successfully!');
+      router.push('/items');
+    }
   };
 
   return (
@@ -70,7 +71,10 @@ const AddProductpage = () => {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <button type="submit" className="bg-gray-900 text-white w-full py-2">
+        <button
+          type="submit"
+          className="bg-gray-900 text-white w-full py-2 cursor-pointer"
+        >
           Add Product
         </button>
       </form>

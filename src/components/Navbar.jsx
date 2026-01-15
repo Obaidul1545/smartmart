@@ -26,26 +26,30 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center px-6 py-3 bg-gray-900 text-white ">
-      <h1 className="text-xl font-bold">SmartMart</h1>
+    <nav className=" bg-gray-900">
+      <div className="container mx-auto flex justify-between items-center px-6 py-3  text-white ">
+        <Link href={'/'} className="text-xl font-bold">
+          SmartMart
+        </Link>
 
-      <div className="space-x-6">
-        <Link href="/">Home</Link>
-        <Link href="/items">Products</Link>
-        <Link href="/add-item">Add Product</Link>
-        {!isLoggedIn ? (
-          <>
-            <Link href="/login">Login</Link>
-            <Link href="/register">Register</Link>
-          </>
-        ) : (
-          <button
-            onClick={handleLogout}
-            className="text-red-400 hover:text-red-500 cursor-pointer"
-          >
-            Logout
-          </button>
-        )}
+        <div className="space-x-6">
+          <Link href="/">Home</Link>
+          <Link href="/items">Products</Link>
+          <Link href="/add-item">Add Product</Link>
+          {!isLoggedIn ? (
+            <>
+              <Link href="/login">Login</Link>
+              <Link href="/register">Register</Link>
+            </>
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="text-red-400 hover:text-red-500 cursor-pointer"
+            >
+              Logout
+            </button>
+          )}
+        </div>
       </div>
     </nav>
   );

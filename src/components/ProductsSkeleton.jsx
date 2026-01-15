@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProductsSkeleton = () => {
   return (
-    <div className="border p-4 shadow-sm animate-pulse">
+    <div className="p-4 shadow-sm animate-pulse">
       <div className="h-40 w-full bg-gray-300 mb-3" />
 
       <div className="h-5 bg-gray-300 rounded w-3/4 mb-2" />

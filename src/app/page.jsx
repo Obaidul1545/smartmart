@@ -1,10 +1,8 @@
-import Image from 'next/image';
-
 export default function Home() {
   return (
     <div>
       {/* 1. Hero Section */}
-      <section className="p-16 bg-gray-100 text-center">
+      <section className="py-16 bg-gray-100 text-center">
         <h2 className="text-4xl font-bold mb-4">
           Discover Smart Shopping with SmartMart
         </h2>
