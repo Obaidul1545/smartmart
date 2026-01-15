@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const getProducts = async () => {
-  const res = await fetch('http://localhost:3000/api/products', {
+  const res = await fetch(`${process.env.PUBLIC_BASE_URL}/api/products`, {
     cache: 'no-store',
   });
   return res.json();
@@ -68,8 +68,12 @@ const ProductsPage = async () => {
 
       <div className="grid grid-cols-3 gap-6">
         {products.map((item) => (
-          <div key={item.id} className="border p-4 shadow-sm">
-            <img src={item.image} className="h-40 w-full object-cover mb-3" />
+          <div key={item._id} className="border p-4 shadow-sm">
+            <img
+              src={item.image}
+              className="h-40 w-full object-cover mb-3"
+              alt=""
+            />
             <h3 className="text-xl font-semibold">{item.name}</h3>
             <p className="text-gray-600">${item.price}</p>
 

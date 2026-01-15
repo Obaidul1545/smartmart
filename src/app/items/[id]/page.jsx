@@ -27,7 +27,7 @@ const ProductDetails = async ({ params }) => {
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-[380px] object-cover rounded-md"
+              className="w-full h-95 object-cover rounded-md"
             />
           </div>
 
