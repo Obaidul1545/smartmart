@@ -7,9 +7,9 @@ product management functionality.
 
 ---
 
-## Live Demo
+## 🌐 Live Demo
 
-[🌐 Visit SmartMart](https://smartmart-ten.vercel.app)
+- Visit SmartMart: https://smartmart-ten.vercel.app
 
 ## Implemented Features
 
