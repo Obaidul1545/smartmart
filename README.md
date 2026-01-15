@@ -7,6 +7,10 @@ product management functionality.
 
 ---
 
+## Live Demo
+
+[🌐 Visit SmartMart](https://smartmart-ten.vercel.app)
+
 ## Implemented Features
 
 - Landing page with 7 sections

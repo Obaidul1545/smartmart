@@ -11,7 +11,7 @@ const Navbar = () => {
   useEffect(() => {
     const isAuth = document.cookie
       .split('; ')
-      .find((row) => row.startsWith('smartmart_auth='))
+      .find((row) => row.startsWith('auth='))
       ?.split('=')[1];
 
     setIsLoggedIn(isAuth === 'true');
@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     // cookie remove
-    document.cookie = 'smartmart_auth=; path=/; ';
+    document.cookie = 'sauth=; path=/; ';
 
     setIsLoggedIn(false);
     router.push('/login');

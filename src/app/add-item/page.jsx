@@ -16,7 +16,7 @@ const AddProductpage = () => {
 
     const newProduct = {
       name,
-      price,
+      price: Number(price),
       description,
       image,
     };

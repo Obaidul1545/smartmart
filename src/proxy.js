@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export function proxy(request) {
-  const isLoggedin = request.cookies.get('smartmart_auth')?.value == 'true';
+  const isLoggedin = request.cookies.get('auth')?.value == 'true';
 
   if (!isLoggedin) {
     const loginUrl = new URL('/login', request.url);
