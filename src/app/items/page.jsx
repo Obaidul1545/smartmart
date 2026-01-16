@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import ProductCard from '@/components/ProductCard';
 import React from 'react';
 
 const getProducts = async () => {
@@ -63,27 +63,12 @@ const ProductsPage = async () => {
   const products = await getProducts();
 
   return (
-    <div className="p-10">
-      <h1 className="text-3xl font-bold mb-6">SmartMart Products</h1>
+    <div className="container mx-auto my-10 px-4">
+      <h1 className="text-3xl font-bold my-10">SmartMart Products</h1>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {products.map((item) => (
-          <div key={item._id} className="border p-4 shadow-sm">
-            <img
-              src={item.image}
-              className="h-40 w-full object-cover mb-3"
-              alt=""
-            />
-            <h3 className="text-xl font-semibold">{item.name}</h3>
-            <p className="text-gray-600">${item.price}</p>
-
-            <Link
-              href={`/items/${item._id}`}
-              className="text-blue-600 mt-2 inline-block"
-            >
-              View Details →
-            </Link>
-          </div>
+          <ProductCard key={item._id} item={item} />
         ))}
       </div>
     </div>

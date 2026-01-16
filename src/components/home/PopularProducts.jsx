@@ -2,7 +2,15 @@ import Link from 'next/link';
 import React from 'react';
 import ProductCard from '../ProductCard';
 
-const PopularProducts = () => {
+const getProducts = async () => {
+  const res = await fetch(`${process.env.PUBLIC_BASE_URL}/api/products`, {
+    cache: 'no-store',
+  });
+  return res.json();
+};
+
+const PopularProducts = async () => {
+  const products = await getProducts();
   return (
     <div>
       <section className="bg-gray-50 py-20">
@@ -16,11 +24,10 @@ const PopularProducts = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {/* Product Card */}
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {products.map((item) => (
+              <ProductCard key={item._id} item={item} />
+            ))}
           </div>
 
           {/* CTA */}
