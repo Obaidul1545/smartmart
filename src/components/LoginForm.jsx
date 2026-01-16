@@ -24,8 +24,10 @@ const LoginForm = () => {
     e.preventDefault();
     if (email === 'admin@gmail.com' && password === 'admin123') {
       // cookie set
-      document.cookie = 'auth=true; path=/';
+      document.cookie = 'auth=true; path=/;';
+
       router.push(redirectTo);
+
       toast.success('Login successful!');
     } else {
       toast.error('Invalid email or password');
